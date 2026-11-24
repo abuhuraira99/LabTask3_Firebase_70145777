@@ -1,7 +1,7 @@
 package com.example.uollostfound;
 
 /**
- * One post on the UOL Lost &amp; Found Board.
+ * One post on the UOL Lost and Found Board.
  *
  * Firebase uses the public getters to write a LostItem under the LostFound node and the
  * no-argument constructor plus the public setters to rebuild it from a DataSnapshot.
