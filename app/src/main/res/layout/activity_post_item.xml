@@ -13,7 +13,9 @@
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/navy_800">
+        android:background="@color/navy_800"
+        app:liftOnScroll="false"
+        app:liftOnScrollColor="@color/navy_800">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"

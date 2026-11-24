@@ -16,7 +16,7 @@
     </plurals>
     <string name="live_connecting">Connecting…</string>
     <string name="live_online">Live from Firebase</string>
-    <string name="live_offline">Offline · saved posts</string>
+    <string name="live_offline">Offline</string>
     <string name="toast_read_failed">Could not load the board: %1$s</string>
     <string name="snack_returned">“%1$s” marked as returned</string>
     <string name="snack_already_returned">“%1$s” is already marked as returned</string>
