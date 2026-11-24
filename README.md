@@ -13,7 +13,7 @@ Abu Huraira, SAP ID 70145777, Section S
 
 ## Firebase project
 
-| | |
+| Setting | Value |
 |---|---|
 | Firebase project | `uol-lost-and-found-70145777` |
 | Database URL | https://uol-lost-and-found-70145777-default-rtdb.firebaseio.com |
