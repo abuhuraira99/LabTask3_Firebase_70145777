@@ -44,7 +44,7 @@
     <string name="type_help">Choose Lost if you are looking for the item, or Found if you have it and want to return it.</string>
     <string name="btn_post">Post Item</string>
     <string name="btn_posting">Posting…</string>
-    <string name="btn_waiting">Saved on this phone · waiting for network</string>
+    <string name="btn_waiting">Waiting for network…</string>
     <string name="error_item_name">Item name is required</string>
     <string name="error_location">Location is required</string>
     <string name="error_contact">Contact is required</string>

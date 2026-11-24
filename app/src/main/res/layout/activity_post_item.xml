@@ -220,7 +220,8 @@
             android:fontFamily="@font/inter_semibold"
             android:text="@string/btn_post"
             android:textAppearance="@style/TextAppearance.LostFound.Button"
-            app:backgroundTint="@color/navy_800"
+            android:textColor="@color/btn_primary_text"
+            app:backgroundTint="@color/btn_primary_bg"
             app:cornerRadius="16dp" />
     </LinearLayout>
 </LinearLayout>

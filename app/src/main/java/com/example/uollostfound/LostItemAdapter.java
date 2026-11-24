@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Puts each LostItem into an item_lost card. Open posts are white cards with a coloured
@@ -93,6 +94,20 @@ public class LostItemAdapter extends RecyclerView.Adapter<LostItemAdapter.LostIt
                 returned ? R.string.cd_card_returned : R.string.cd_card_open,
                 item.getItemName(), item.getType(), item.getLocation(), item.getContact()));
     }
+
+    /** A PAYLOAD_TIME refresh only rewrites the "posted ... ago" label, without redrawing the card. */
+    @Override
+    public void onBindViewHolder(@NonNull LostItemViewHolder holder, int position,
+                                 @NonNull List<Object> payloads) {
+        if (payloads.contains(PAYLOAD_TIME)) {
+            holder.tvPosted.setText(postedAgo(holder.itemView.getContext(),
+                    items.get(position).getId()));
+        } else {
+            super.onBindViewHolder(holder, position, payloads);
+        }
+    }
+
+    static final Object PAYLOAD_TIME = new Object();
 
     @Override
     public int getItemCount() {

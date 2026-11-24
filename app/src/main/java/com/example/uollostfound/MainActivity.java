@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
     private ValueEventListener connectionListener;
     private final Handler chipHandler = new Handler(Looper.getMainLooper());
     private final Runnable showOffline = () -> setLiveChip(false);
+    private final Runnable refreshTimes = new Runnable() {
+        @Override
+        public void run() {
+            adapter.notifyItemRangeChanged(0, items.size(), LostItemAdapter.PAYLOAD_TIME);
+            chipHandler.postDelayed(this, 60_000);
+        }
+    };
 
     private RecyclerView rvItems;
     private View progressBoard, tapHint, emptyState;
@@ -163,6 +170,18 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
             snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.navy_100));
         }
         snackbar.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        chipHandler.postDelayed(refreshTimes, 60_000);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        chipHandler.removeCallbacks(refreshTimes);
     }
 
     /**
