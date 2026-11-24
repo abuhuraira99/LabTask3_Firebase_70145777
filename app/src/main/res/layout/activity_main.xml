@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/canvas"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -22,4 +23,19 @@
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
-</LinearLayout>
+    <!-- "Post an Item" opens PostItemActivity -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:text="@string/fab_post"
+        android:textAppearance="@style/TextAppearance.LostFound.Button"
+        android:textColor="@color/navy_900"
+        android:textSize="15sp"
+        app:backgroundTint="@color/navy_100"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@color/navy_900" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

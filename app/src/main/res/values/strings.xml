@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">UOL Lost &amp; Found</string>
     <string name="board_subtitle">Department of Software Engineering</string>
+
+    <!-- Board -->
+    <string name="fab_post">Post an Item</string>
+
+    <!-- Post Item screen -->
+    <string name="post_title">Post an Item</string>
+    <string name="post_headline">What did you lose or find?</string>
+    <string name="post_intro">Your post goes straight to the shared board, so every student who has the app open sees it at once.</string>
+    <string name="section_details">Item details</string>
+    <string name="section_type">Type</string>
+    <string name="hint_item_name">Item name</string>
+    <string name="hint_location">Location</string>
+    <string name="hint_contact">Contact</string>
+    <string name="helper_item_name">For example, Black leather wallet</string>
+    <string name="helper_location">Where it was lost or found, e.g. Cafeteria, CS-1 Building</string>
+    <string name="helper_contact">A phone number that people can call or message</string>
+    <string name="type_lost">Lost</string>
+    <string name="type_found">Found</string>
+    <string name="type_help">Choose Lost if you are looking for the item, or Found if you have it and want to return it.</string>
+    <string name="btn_post">Post Item</string>
+    <string name="btn_posting">Posting…</string>
+    <string name="btn_waiting">Saved on this phone · waiting for network</string>
+    <string name="error_item_name">Item name is required</string>
+    <string name="error_location">Location is required</string>
+    <string name="error_contact">Contact is required</string>
+    <string name="offline_form">You are offline. You can still post: the item is kept on this phone and uploads to Firebase as soon as the connection returns.</string>
+    <string name="toast_posted">Item posted to the board</string>
+    <string name="toast_post_failed">Could not post the item: %1$s</string>
+    <string name="cd_back">Back to the board</string>
 </resources>
