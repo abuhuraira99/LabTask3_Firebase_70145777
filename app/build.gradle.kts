@@ -42,6 +42,10 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.material)
 
+    // RecyclerView and CardView, as in Lab 7
+    implementation(libs.recyclerview)
+    implementation(libs.cardview)
+
     // Firebase Realtime Database through the Firebase BoM (Lab 9)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.database)

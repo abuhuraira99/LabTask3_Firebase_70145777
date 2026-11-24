@@ -4,6 +4,11 @@
 
     <!-- Board -->
     <string name="fab_post">Post an Item</string>
+    <string name="status_open">Open</string>
+    <string name="status_returned">Returned</string>
+    <string name="posted_just_now">Just now</string>
+    <string name="cd_card_open">%1$s, %2$s, at %3$s, contact %4$s. Open. Double tap to mark it as returned.</string>
+    <string name="cd_card_returned">%1$s, %2$s, at %3$s, contact %4$s. Returned.</string>
 
     <!-- Post Item screen -->
     <string name="post_title">Post an Item</string>
