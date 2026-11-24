@@ -22,6 +22,8 @@
     <string name="snack_already_returned">“%1$s” is already marked as returned</string>
     <string name="snack_update_failed">Could not update the item: %1$s</string>
     <string name="snack_undo">Undo</string>
+    <string name="empty_title">No items posted yet</string>
+    <string name="empty_body">Tap “Post an Item” to add the first one. Everything posted here shows up on every student’s board.</string>
     <string name="cd_card_open">%1$s, %2$s, at %3$s, contact %4$s. Open. Double tap to mark it as returned.</string>
     <string name="cd_card_returned">%1$s, %2$s, at %3$s, contact %4$s. Returned.</string>
 

@@ -137,6 +137,51 @@
                 android:paddingBottom="@dimen/board_bottom_space"
                 tools:listitem="@layout/item_lost" />
 
+            <!-- Shown when the LostFound node has no children -->
+            <LinearLayout
+                android:id="@+id/emptyState"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="48dp"
+                android:paddingEnd="48dp"
+                android:paddingBottom="@dimen/board_bottom_space"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:background="@drawable/bg_empty_icon">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_inbox"
+                        app:tint="@color/navy_800" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/empty_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/empty_body"
+                    android:textAppearance="@style/TextAppearance.LostFound.Body" />
+            </LinearLayout>
+
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/progressBoard"
                 android:layout_width="wrap_content"

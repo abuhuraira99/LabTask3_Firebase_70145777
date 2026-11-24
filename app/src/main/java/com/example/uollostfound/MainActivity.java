@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
     private final Runnable showOffline = () -> setLiveChip(false);
 
     private RecyclerView rvItems;
-    private View progressBoard, tapHint;
+    private View progressBoard, tapHint, emptyState;
     private TextView tvSummary, tvLive;
     private ImageView ivLiveDot;
     private ExtendedFloatingActionButton fabPost;
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
         rvItems = findViewById(R.id.rvItems);
         progressBoard = findViewById(R.id.progressBoard);
         tapHint = findViewById(R.id.tapHint);
+        emptyState = findViewById(R.id.emptyState);
         tvSummary = findViewById(R.id.tvSummary);
         tvLive = findViewById(R.id.tvLive);
         ivLiveDot = findViewById(R.id.ivLiveDot);
@@ -108,6 +109,10 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
                 adapter.notifyDataSetChanged();
 
                 progressBoard.setVisibility(View.GONE);
+                // Empty board: LostFound has no children yet
+                boolean empty = !snapshot.hasChildren();
+                emptyState.setVisibility(empty ? View.VISIBLE : View.GONE);
+                rvItems.setVisibility(empty ? View.GONE : View.VISIBLE);
                 updateSummary();
             }
 
@@ -158,6 +163,22 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
             snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.navy_100));
         }
         snackbar.show();
+    }
+
+    /**
+     * The listeners are kept in fields so they can be removed here. Without this, a destroyed
+     * MainActivity would keep receiving onDataChange() calls (and leak) after it is closed.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (boardListener != null) {
+            lostFoundRef.removeEventListener(boardListener);
+        }
+        if (connectionListener != null) {
+            connectionRef.removeEventListener(connectionListener);
+        }
+        chipHandler.removeCallbacks(showOffline);
     }
 
     private void updateSummary() {
