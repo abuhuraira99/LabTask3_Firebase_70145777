@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.SystemBarStyle;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -120,9 +122,42 @@ public class MainActivity extends AppCompatActivity implements LostItemAdapter.O
         lostFoundRef.addValueEventListener(boardListener);
     }
 
+    /**
+     * Mark as Returned: only the status child of the tapped post is written.
+     * The listener above then redraws the card in grey on every phone.
+     */
     @Override
     public void onItemClick(int position) {
-        // Marking an item as Returned is added in the next step
+        LostItem item = items.get(position);
+        if (item.getId() == null) {
+            return;
+        }
+        if (LostItemAdapter.STATUS_RETURNED.equals(item.getStatus())) {
+            showMessage(getString(R.string.snack_already_returned, item.getItemName()), null);
+            return;
+        }
+
+        lostFoundRef.child(item.getId()).child("status").setValue(LostItemAdapter.STATUS_RETURNED,
+                (error, ref) -> {
+                    if (error == null) {
+                        // Undo puts the post back to Open, again by writing the status child only
+                        showMessage(getString(R.string.snack_returned, item.getItemName()),
+                                v -> lostFoundRef.child(item.getId()).child("status")
+                                        .setValue(PostItemActivity.STATUS_OPEN));
+                    } else {
+                        showMessage(getString(R.string.snack_update_failed, error.getMessage()), null);
+                    }
+                });
+    }
+
+    private void showMessage(String message, @Nullable View.OnClickListener undo) {
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.main), message, Snackbar.LENGTH_LONG)
+                .setAnchorView(fabPost);
+        if (undo != null) {
+            snackbar.setAction(R.string.snack_undo, undo);
+            snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.navy_100));
+        }
+        snackbar.show();
     }
 
     private void updateSummary() {
