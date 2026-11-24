@@ -23,13 +23,138 @@
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Board header: sort order, counts and the live connection chip -->
+        <LinearLayout
+            android:id="@+id/boardHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/board_sort"
+                    android:textAppearance="@style/TextAppearance.LostFound.Overline"
+                    android:textColor="@color/text_tertiary" />
+
+                <TextView
+                    android:id="@+id/tvSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    tools:text="8 posts · 5 open · 3 returned" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/liveChip"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_live_chip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/ivLiveDot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/bg_dot"
+                    app:tint="@color/status_offline" />
+
+                <TextView
+                    android:id="@+id/tvLive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/live_connecting"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- How to use the board (recognition rather than recall) -->
+        <LinearLayout
+            android:id="@+id/tapHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="8dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_touch"
+                app:tint="@color/text_tertiary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/board_hint"
+                android:textAppearance="@style/TextAppearance.LostFound.Caption" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItems"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingTop="2dp"
+                android:paddingBottom="@dimen/board_bottom_space"
+                tools:listitem="@layout/item_lost" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                app:indicatorColor="@color/navy_800"
+                app:trackCornerRadius="4dp" />
+        </FrameLayout>
+    </LinearLayout>
+
     <!-- "Post an Item" opens PostItemActivity -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/fab_margin"
         android:text="@string/fab_post"
         android:textAppearance="@style/TextAppearance.LostFound.Button"
         android:textColor="@color/navy_900"

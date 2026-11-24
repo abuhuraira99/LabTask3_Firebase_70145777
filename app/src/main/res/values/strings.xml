@@ -7,6 +7,17 @@
     <string name="status_open">Open</string>
     <string name="status_returned">Returned</string>
     <string name="posted_just_now">Just now</string>
+    <string name="board_sort">Newest first</string>
+    <string name="board_hint">Tap a card once the item is back with its owner</string>
+    <string name="board_summary">%1$s · %2$d open · %3$d returned</string>
+    <plurals name="post_count">
+        <item quantity="one">%d post</item>
+        <item quantity="other">%d posts</item>
+    </plurals>
+    <string name="live_connecting">Connecting…</string>
+    <string name="live_online">Live from Firebase</string>
+    <string name="live_offline">Offline · saved posts</string>
+    <string name="toast_read_failed">Could not load the board: %1$s</string>
     <string name="cd_card_open">%1$s, %2$s, at %3$s, contact %4$s. Open. Double tap to mark it as returned.</string>
     <string name="cd_card_returned">%1$s, %2$s, at %3$s, contact %4$s. Returned.</string>
 
