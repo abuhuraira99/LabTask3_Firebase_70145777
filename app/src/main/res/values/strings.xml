@@ -37,8 +37,8 @@
     <string name="hint_location">Location</string>
     <string name="hint_contact">Contact</string>
     <string name="helper_item_name">For example, Black leather wallet</string>
-    <string name="helper_location">Where it was lost or found, e.g. Cafeteria, CS-1 Building</string>
-    <string name="helper_contact">A phone number that people can call or message</string>
+    <string name="helper_location">Where it was lost or found</string>
+    <string name="helper_contact">A number people can call or message</string>
     <string name="type_lost">Lost</string>
     <string name="type_found">Found</string>
     <string name="type_help">Choose Lost if you are looking for the item, or Found if you have it and want to return it.</string>

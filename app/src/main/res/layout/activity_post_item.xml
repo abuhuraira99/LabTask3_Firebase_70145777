@@ -217,6 +217,7 @@
             android:id="@+id/btnPost"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:fontFamily="@font/inter_semibold"
             android:text="@string/btn_post"
             android:textAppearance="@style/TextAppearance.LostFound.Button"
             app:backgroundTint="@color/navy_800"

@@ -200,6 +200,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:fontFamily="@font/inter_semibold"
         android:text="@string/fab_post"
         android:textAppearance="@style/TextAppearance.LostFound.Button"
         android:textColor="@color/navy_900"

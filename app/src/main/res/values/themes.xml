@@ -16,8 +16,18 @@
         <item name="colorError">@color/error</item>
         <item name="android:colorBackground">@color/canvas</item>
         <item name="android:windowBackground">@color/canvas</item>
-        <item name="android:fontFamily">@font/inter</item>
-        <item name="fontFamily">@font/inter</item>
+        <!-- Material 3 type scale set in Inter, so every component uses the same typeface -->
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.LostFound.M3.DisplaySmall</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.LostFound.M3.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.LostFound.M3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.LostFound.M3.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.LostFound.M3.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.LostFound.M3.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.LostFound.M3.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.LostFound.M3.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.LostFound.M3.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.LostFound.M3.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.LostFound.M3.LabelSmall</item>
         <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
         <item name="android:navigationBarColor" tools:ignore="NewApi">@android:color/transparent</item>
         <item name="textInputStyle">@style/Widget.LostFound.TextInputLayout</item>
@@ -59,6 +69,59 @@
         <item name="backgroundTint">@color/navy_900</item>
     </style>
 
+    <!-- Material 3 type scale overrides -->
+    <style name="TextAppearance.LostFound.M3.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.LostFound.M3.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
     <!-- Type scale (Inter) -->
     <style name="TextAppearance.LostFound.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:fontFamily">@font/inter_semibold</item>
@@ -71,6 +134,7 @@
         <item name="android:fontFamily">@font/inter_regular</item>
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="TextAppearance.LostFound.Headline" parent="TextAppearance.Material3.HeadlineSmall">
@@ -86,6 +150,7 @@
         <item name="fontFamily">@font/inter_semibold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="TextAppearance.LostFound.Body" parent="TextAppearance.Material3.BodyMedium">
@@ -93,6 +158,7 @@
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="TextAppearance.LostFound.Caption" parent="TextAppearance.Material3.BodySmall">
@@ -100,6 +166,7 @@
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/text_tertiary</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="TextAppearance.LostFound.Overline" parent="TextAppearance.Material3.LabelSmall">
