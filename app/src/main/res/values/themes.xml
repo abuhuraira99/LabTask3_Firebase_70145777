@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.LostFound" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/navy_800</item>
+        <item name="colorOnPrimary">@color/text_on_navy</item>
+        <item name="colorPrimaryContainer">@color/navy_100</item>
+        <item name="colorOnPrimaryContainer">@color/navy_900</item>
+        <item name="colorSecondary">@color/navy_700</item>
+        <item name="colorSecondaryContainer">@color/navy_100</item>
+        <item name="colorOnSecondaryContainer">@color/navy_900</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/outline_strong</item>
+        <item name="colorOutlineVariant">@color/outline</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:colorBackground">@color/canvas</item>
+        <item name="android:windowBackground">@color/canvas</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+        <item name="textInputStyle">@style/Widget.LostFound.TextInputLayout</item>
+        <item name="radioButtonStyle">@style/Widget.LostFound.RadioButton</item>
+        <item name="snackbarStyle">@style/Widget.LostFound.Snackbar</item>
+    </style>
+
+    <style name="Theme.LostFound" parent="Base.Theme.LostFound" />
+
+    <!-- Top app bar -->
+    <style name="Widget.LostFound.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/navy_800</item>
+        <item name="titleTextAppearance">@style/TextAppearance.LostFound.ToolbarTitle</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.LostFound.ToolbarSubtitle</item>
+        <item name="titleTextColor">@color/text_on_navy</item>
+        <item name="subtitleTextColor">@color/text_on_navy_muted</item>
+        <item name="navigationIconTint">@color/text_on_navy</item>
+    </style>
+
+    <style name="Widget.LostFound.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/navy_800</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="startIconTint">@color/text_tertiary</item>
+        <item name="hintTextColor">@color/navy_800</item>
+        <item name="helperTextTextColor">@color/text_tertiary</item>
+    </style>
+
+    <style name="Widget.LostFound.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/navy_800</item>
+        <item name="android:textAppearance">@style/TextAppearance.LostFound.Body</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Widget.LostFound.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/navy_900</item>
+    </style>
+
+    <!-- Type scale (Inter) -->
+    <style name="TextAppearance.LostFound.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.ToolbarSubtitle" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.Headline" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">-0.015</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.CardTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.Overline" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearance.LostFound.Button" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+</resources>

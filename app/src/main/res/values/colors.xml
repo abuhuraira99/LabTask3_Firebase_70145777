@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand: deep university navy on a soft grey canvas -->
+    <color name="navy_900">#0F1E3D</color>
+    <color name="navy_800">#1A2B4C</color>
+    <color name="navy_700">#24396A</color>
+    <color name="navy_100">#DCE4F7</color>
+    <color name="navy_50">#EEF2FB</color>
+
+    <color name="canvas">#F4F5F8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="outline">#E2E5EB</color>
+    <color name="outline_strong">#C9CED8</color>
+
+    <color name="text_primary">#141B2B</color>
+    <color name="text_secondary">#566074</color>
+    <color name="text_tertiary">#8A92A3</color>
+    <color name="text_on_navy">#FFFFFF</color>
+    <color name="text_on_navy_muted">#B9C4DE</color>
+
+    <!-- Post types -->
+    <color name="lost_text">#B3261E</color>
+    <color name="lost_container">#FCE8E6</color>
+    <color name="found_text">#1E6B3A</color>
+    <color name="found_container">#E2F3E7</color>
+
+    <!-- Status -->
+    <color name="status_open">#B86E00</color>
+    <color name="status_live">#2E9D57</color>
+    <color name="status_offline">#8A92A3</color>
+    <color name="returned_surface">#ECEEF2</color>
+    <color name="returned_text">#7A8191</color>
+    <color name="returned_badge">#DADDE3</color>
+
+    <color name="error">#B3261E</color>
+</resources>
